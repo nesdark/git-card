@@ -17,17 +17,18 @@ window.updateUser = () => {
 };
 
 function updateCard(newUser) {
-  const newCard = document.createElement('div');
+  const updatedCard = document.createElement('div');
 
-  if (!newCard.login) {
+  const newUserNotFounded = newUser.login;
+  if (!newUserNotFounded) {
     NotAnUserError.show();
     return;
   }
   NotAnUserError.hide();
 
-  newCard.id = 'card';
+  updatedCard.id = 'card';
 
-  newCard.innerHTML = `
+  updatedCard.innerHTML = `
     <div class="container">
       <img src="./public/logo.svg" alt="Rocketseat Logo" />
       <label>
@@ -67,26 +68,26 @@ function updateCard(newUser) {
       </ul>
   `;
 
-  newCard.querySelector('.username').setAttribute('value', newUser.login);
+  updatedCard.querySelector('.username').setAttribute('value', newUser.login);
 
-  newCard
+  updatedCard
     .querySelector('.user-image')
     .setAttribute('src', `https://github.com/${newUser.login}.png`);
-  newCard
+  updatedCard
     .querySelector('.user-image')
     .setAttribute('alt', `Photo of ${newUser.login}`);
-  newCard.querySelector('.followers span').textContent = newUser.following;
-  newCard.querySelector('.following span').textContent = newUser.followers;
-  newCard.querySelector('.repositories span').textContent =
+  updatedCard.querySelector('.followers span').textContent = newUser.following;
+  updatedCard.querySelector('.following span').textContent = newUser.followers;
+  updatedCard.querySelector('.repositories span').textContent =
     newUser.public_repos;
-  newCard.querySelector('.company span').textContent =
+  updatedCard.querySelector('.company span').textContent =
     newUser.company || 'No found';
-  newCard.querySelector('.location span').textContent =
+  updatedCard.querySelector('.location span').textContent =
     newUser.location || 'No found';
 
   clearCard(cardWrapper);
 
-  cardWrapper.append(newCard);
+  cardWrapper.append(updatedCard);
 }
 
 const NotAnUserError = {
