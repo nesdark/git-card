@@ -196,3 +196,6 @@ main {
 #customize-card button:hover {
   background: #0e0e0e;
 }
+
+@keyframes shake {
+}

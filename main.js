@@ -19,7 +19,8 @@ window.updateUser = () => {
 function updateCard(newUser) {
   const updatedCard = document.createElement('div');
 
-  const newUserNotFounded = newUser.login;
+  const newUserNotFounded = newUser.login; // undefined ||
+  console.log(newUser.login);
   if (!newUserNotFounded) {
     NotAnUserError.show();
     return;
@@ -29,43 +30,61 @@ function updateCard(newUser) {
   updatedCard.id = 'card';
 
   updatedCard.innerHTML = `
-    <div class="container">
-      <img src="./public/logo.svg" alt="Rocketseat Logo" />
-      <label>
-      <input class="username" placeholder="Digite aqui o usuário" oninput="updateUser()" id="usernameInput" />
-      </label>
-    </div>
-    <img
-      src=""
-      alt=""
-      class="user-image"
-    />
-    <div class="info">
-      <ul>
-        <li class="following">
-          <img src="./public/followers.svg" alt="Followers Icon" />
-          <span>X</span>
-          Followers
-        </li>
-        <li class="followers">
-          <img src="./public/followers.svg" alt="Followers Icon" />
-          <span>X</span>
-          Following
-        </li>
-        <li class="repositories">
-          <img src="./public/repository.svg" alt="Repository Icon" />
-          <span>X</span>
-          Repositories
-        </li>
-        <li class="company">
-          <img src="./public/company.svg" alt="Repository Icon" />
-          <span>X</span>
-        </li>
-        <li class="location">
-          <img src="./public/location.svg" alt="Repository Icon" />
-          <span>X</span>
-        </li>
-      </ul>
+      <div class="container">
+        <img
+          src="./public/logo.svg"
+          alt="Rocketseat Logo"
+          class="rocketseat-logo"
+        />
+        <label>
+          <input
+            class="username"
+            oninput="updateUser()"
+            id="usernameInput"
+            placeholder="Digite aqui o usuário"
+          />
+        </label>
+      </div>
+      <img
+        src="https://github.com/birobirobiro.png"
+        alt="Photo of birobirobiro"
+        class="user-image"
+      />
+      <div class="info">
+        <ul>
+          <li class="following">
+            <img src="./public/followers.svg" alt="Followers Icon" />
+            <span>X</span>
+            Followers
+          </li>
+          <li class="followers">
+            <img src="./public/followers.svg" alt="Followers Icon" />
+            <span>X</span>
+            Following
+          </li>
+          <li class="repositories">
+            <img src="./public/repository.svg" alt="Repository Icon" />
+            <span>X</span>
+            Repositories
+          </li>
+          <li class="company">
+            <img src="./public/company.svg" alt="Repository Icon" />
+            <span>X</span>
+          </li>
+          <li class="location">
+            <img src="./public/location.svg" alt="Repository Icon" />
+            <span>X</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="extended-logo">
+        <img src="./public/extended-logo.svg" alt="Rocketseat Logo" />
+      </div>
+
+      <div class="error-message">
+        <img src="./public/alert.svg" alt="Alert Icon" class="alert" />
+        User not founded
   `;
 
   updatedCard.querySelector('.username').setAttribute('value', newUser.login);
