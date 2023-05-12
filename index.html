@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Git Card</title>
+
+    <link rel="stylesheet" href="./main.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Prompt&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main>
+      <section id="rocketcard">
+        <h2>Share your <strong>#rocketcard</strong></h2>
+
+        <div id="card-wrapper" class="">
+          <div id="card">
+            <div class="container">
+              <img
+                src="./public/logo.svg"
+                alt="Rocketseat Logo"
+                class="rocketseat-logo"
+              />
+              <label>
+                <input
+                  class="username"
+                  oninput="updateUser()"
+                  id="usernameInput"
+                  placeholder="Digite aqui o usuário"
+                />
+              </label>
+            </div>
+            <img
+              src="https://github.com/birobirobiro.png"
+              alt="Photo of birobirobiro"
+              class="user-image"
+            />
+            <div class="info">
+              <ul>
+                <li class="following">
+                  <img src="./public/followers.svg" alt="Followers Icon" />
+                  <span>X</span>
+                  Followers
+                </li>
+                <li class="followers">
+                  <img src="./public/followers.svg" alt="Followers Icon" />
+                  <span>X</span>
+                  Following
+                </li>
+                <li class="repositories">
+                  <img src="./public/repository.svg" alt="Repository Icon" />
+                  <span>X</span>
+                  Repositories
+                </li>
+                <li class="company">
+                  <img src="./public/company.svg" alt="Repository Icon" />
+                  <span>X</span>
+                  @Rocketseat
+                </li>
+                <li class="location">
+                  <img src="./public/location.svg" alt="Repository Icon" />
+                  <span>X</span>
+                  Bebedouro
+                </li>
+              </ul>
+            </div>
+
+            <div class="extended-logo">
+              <img src="./public/extended-logo.svg" alt="Rocketseat Logo" />
+            </div>
+
+            <div class="error-message">
+              <img src="./public/alert.svg" alt="Alert Icon" class="alert" />
+              User not founded
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="customize-card">
+        <h2>Customize Background</h2>
+        <button class="generate-background">Generate Background</button>
+      </section>
+    </main>
+
+    <script src="./main.js" type="module"></script>
+  </body>
+</html>
